@@ -15,7 +15,6 @@ const Header = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in
-        console.log(user);
         const { uid, displayName, email } = user;
         dispatch(addUser({ uid: uid, displayName: displayName, email: email }));
         navigate("/browse");
@@ -39,9 +38,9 @@ const Header = () => {
   };
 
   return (
-    <div className="flex justify-between items-center  navv">
+    <div className="flex justify-between items-center  z-10  navv">
       <div className="flex  font-semibold items-center ">
-        <img className="w-28 h-12 mr-5" alt="logo" src={NETFLIX_LOGO_URL}></img>
+        <img className="w-28 h-12 mr-3" alt="logo" src={NETFLIX_LOGO_URL}></img>
         {user && (
           <>
             <h2 className="mr-3">Home</h2>
