@@ -38,7 +38,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex justify-between items-center  z-10  navv">
+    <div className="flex justify-between items-center  px-4 z-20 text-white relative ">
       <div className="flex  font-semibold items-center ">
         <img className="w-28 h-12 mr-3" alt="logo" src={NETFLIX_LOGO_URL}></img>
         {user && (
@@ -51,17 +51,17 @@ const Header = () => {
         )}
       </div>
       {user && (
-        <div className="dropdown-section flex ">
-          {user && <h3 className=" mr-3 ">name+{user.displayName}</h3>}
+        <div className=" flex ">
+          {user && <h3 className=" mr-3 "> {user.displayName}</h3>}
           <img
             className="drop-btn mr-3"
             src={USER_AVATAR_ICON}
             alt="user-icon"
           ></img>
 
-          <h2 className=" mr-3 " onClick={signoutHandler}>
-            Signout
-          </h2>
+          <button className=" mr-3 bg-blue-600 px-4 rounded  " onClick={signoutHandler}>
+            Sign Out
+          </button>
         </div>
       )}
     </div>

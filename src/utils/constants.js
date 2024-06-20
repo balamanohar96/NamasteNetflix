@@ -14,5 +14,7 @@ export const OPTIONS = {
   },
 };
 
-export const MOVIES_API =
-  "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1";
+export const MOVIES_API = "https://api.themoviedb.org/3/movie/now_playing";
+export const POPULAR_MOVIES_API = "https://api.themoviedb.org/3/movie/popular";
+export const UPCOMING_MOVIES_API = "https://api.themoviedb.org/3/movie/upcoming";
+export const TOP_RATED_MOVIES_API = "https://api.themoviedb.org/3/movie/top_rated";

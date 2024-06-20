@@ -3,6 +3,7 @@ import { validateForm } from "../utils/validateForm";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebasse";
 import { useDispatch } from "react-redux";
@@ -29,11 +30,15 @@ const Login = () => {
         createUserWithEmailAndPassword(auth, userInputEmail, userInputPassword)
           .then((userCredential) => {
             // Signed up
-            console.log('new use  created')
             const user = userCredential.user;
-            const { uid, email } = user;
-            const userName = userNameRef.current.value;
-            dispatch(addUser({ displayName: userName, uid: uid, email: email }));
+            updateProfile(user, {
+              displayName: userNameRef.current.value,
+            }).then(() => {
+              const { uid, email, displayName } = user;
+              dispatch(
+                addUser({ displayName: displayName, uid: uid, email: email })
+              );
+            });
           })
           .catch((error) => {});
       } else {
