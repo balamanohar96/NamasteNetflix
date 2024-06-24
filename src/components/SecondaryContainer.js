@@ -16,7 +16,7 @@ const SecondaryContainer = () => {
     return;
   } else
     return (
-      <div className=" bg-gradient-to-b from-red-600 to-black  text-white">
+      <div className=" bg-gradient-to-b from-cyan-950 to-black  text-white">
         <div className="  relative z-10 h-full pb-56 -mt-56 pl-8">
           <MovieCardsList listTitle={"New Released Movies"} movies={nowPlayingMovies} />
           <MovieCardsList listTitle={"Top Rated Movies"} movies={topRatedMovies} />

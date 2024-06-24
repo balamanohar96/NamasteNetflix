@@ -15,13 +15,11 @@ const PrimaryContainer = () => {
   const moviesList = useSelector((store) => store.movie.nowPlayingMovies);
   if (!moviesList) return;
   let randomNumber = Math.floor(Math.random() * moviesList.length);
-  console.log(randomNumber);
   if (
     moviesList[randomNumber].title === "Kali: Avenging Angel" ||
     moviesList[randomNumber].title === "May the 12th Be with You"
   ) {
     randomNumber -= 2;
-    console.log(randomNumber);
   }
   const randomMovie = moviesList[randomNumber];
   const { title, id, overview } = randomMovie;

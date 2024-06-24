@@ -8,7 +8,7 @@ const RunTrailerDetails = ({ title, description }) => {
     setIsMoreActive(!isMoreActive);
     if (isMoreActive) {
       setOverview(description.slice(0, 190));
-    } else {
+    } else {  
       setOverview(description.slice(0, 1900));
     }
   };
