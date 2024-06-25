@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { INFO_ICON, PLAY_ICON } from "../utils/constants";
 
 const RunTrailerDetails = ({ title, description, movieID, rating }) => {
   const [isMoreActive, setIsMoreActive] = useState(false);
@@ -20,28 +21,32 @@ const RunTrailerDetails = ({ title, description, movieID, rating }) => {
         {overview}
         {!isMoreActive && description.length > 190 && "..."}
       </p>
-
-      <Link
-        className="rounded-md bg-white text-black px-8 py-2 mr-3 hover:bg-opacity-80"
-        to={"/movie/" + movieID}
-        state={{
-          id: movieID,
-          title: title,
-          overview: description,
-          vote_average: rating,
-        }}
-      >
-        Play
-      </Link>
-
-      {overview.length >= 190 && (
-        <button
-          className="rounded-md bg-white text-white px-8 py-2 bg-opacity-20 "
-          onClick={moreInfoBtnHandler}
+      <div className="flex">
+        <Link
+          to={"/movie/" + movieID}
+          state={{
+            id: movieID,
+            title: title,
+            overview: description,
+            vote_average: rating,
+          }}
         >
-          {isMoreActive ? "Show Less" : "More Info"}
-        </button>
-      )}
+          <button className="rounded-md bg-white text-black px-8 py-2 flex items-center hover:opacity-80 mr-3 ">
+            <img className="w-4 m-2" src={PLAY_ICON} alt="playIcon" />
+            Play
+          </button>
+        </Link>
+
+        {overview.length >= 190 && (
+          <button
+            className="rounded-md bg-white text-black px-8 py-2 flex items-center hover:opacity-80 "
+            onClick={moreInfoBtnHandler}
+          >
+            <img className="w-4 m-2" src={INFO_ICON} alt="infoIcon" />
+            {isMoreActive ? "Show Less" : "More Info"}
+          </button>
+        )}
+      </div>
     </div>
   );
 };

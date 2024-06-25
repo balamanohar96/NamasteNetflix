@@ -15,7 +15,7 @@ const PrimaryContainer = () => {
   const moviesList = useSelector((store) => store.movie.nowPlayingMovies);
   if (!moviesList) return;
 
-  let randomNumber = 19;
+  let randomNumber = 10;
   if (
     moviesList[randomNumber].title === "Kali: Avenging Angel" ||
     moviesList[randomNumber].title === "May the 12th Be with You"

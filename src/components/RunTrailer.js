@@ -7,7 +7,7 @@ const RunTrailer = ({ movieID }) => {
   const trailerVideo = useSelector((store) => store.movie.trailerVideo);
   if (!trailerVideo) return;
   return (
-    <div className="w-screen overflow-hidden ">
+    <div className="w-screen ">
       <iframe
         className="w-screen aspect-video "
         width="1349"
@@ -15,7 +15,7 @@ const RunTrailer = ({ movieID }) => {
         src={
           "https://www.youtube.com/embed/" +
           trailerVideo?.key +
-          "?autoplay=1&showinfo=0&Version=3&loop=1&rel=0&mute=1"
+          "?&autoplay=1&mute=1"
         }
         title="YouTube video player"
       ></iframe>

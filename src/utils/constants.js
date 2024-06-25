@@ -16,5 +16,11 @@ export const OPTIONS = {
 
 export const MOVIES_API = "https://api.themoviedb.org/3/movie/now_playing";
 export const POPULAR_MOVIES_API = "https://api.themoviedb.org/3/movie/popular";
-export const UPCOMING_MOVIES_API = "https://api.themoviedb.org/3/movie/upcoming";
-export const TOP_RATED_MOVIES_API = "https://api.themoviedb.org/3/movie/top_rated";
+export const UPCOMING_MOVIES_API =
+  "https://api.themoviedb.org/3/movie/upcoming";
+export const TOP_RATED_MOVIES_API =
+  "https://api.themoviedb.org/3/movie/top_rated";
+export const PLAY_ICON =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU8sayn7Smd2HprQmuRE1e9HhRYeKapowbYw&s";
+export const INFO_ICON =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSqOVe61oTdSJLq1jPUT7-dDOpE_VH5zdcSg&s";
