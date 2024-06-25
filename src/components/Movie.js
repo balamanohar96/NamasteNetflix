@@ -1,13 +1,14 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import useHeroMovieTrailer from "../hooks/useHeroMovieTrailer";
+import Shimmer from "./Shimmer";
 
 const Movie = () => {
   const location = useLocation();
   const { state } = location;
   const trailerDetails = useHeroMovieTrailer(state.id);
 
-  if (trailerDetails === null) return <h1>Loading....</h1>;
+  if (trailerDetails === null) return <Shimmer />;
 
   return (
     <div className="w-screen  bg-black text-white ">

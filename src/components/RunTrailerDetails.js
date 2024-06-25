@@ -39,7 +39,7 @@ const RunTrailerDetails = ({ title, description, movieID, rating }) => {
 
         {overview.length >= 190 && (
           <button
-            className="rounded-md bg-white text-black px-8 py-2 flex items-center hover:opacity-80 "
+            className="rounded-md bg-white text-black px-8 py-2 flex items-center hover:opacity-80 w-44"
             onClick={moreInfoBtnHandler}
           >
             <img className="w-4 m-2" src={INFO_ICON} alt="infoIcon" />

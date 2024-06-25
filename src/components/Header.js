@@ -60,7 +60,7 @@ const Header = () => {
       </div>
       {user && (
         <div className=" flex ">
-          {user && <h3 className=" mr-3 "> {user.displayName}</h3>}
+          {user && <h3 className=" mr-4 text-xl "> {user.displayName}</h3>}
           <img
             className="drop-btn mr-3"
             src={USER_AVATAR_ICON}
