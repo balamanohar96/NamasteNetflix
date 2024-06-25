@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { auth } from "../utils/firebasse";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { addUser, removeUser } from "../utils/userSlice";
 import { NETFLIX_LOGO_URL, USER_AVATAR_ICON } from "../utils/constants";
 
@@ -43,10 +43,18 @@ const Header = () => {
         <img className="w-28 h-12 mr-3" alt="logo" src={NETFLIX_LOGO_URL}></img>
         {user && (
           <>
-            <h2 className="mr-3">Home</h2>
-            <h2 className="mr-3">TVShows</h2>
-            <h2 className="mr-3">Movies</h2>
-            <h2 className="mr-3">New & Popular</h2>
+            <Link to={"/browse"} className="mr-3 text-lg">
+              Home
+            </Link>
+            <Link to={"/browse"} className="mr-3 text-lg">
+              TVShows
+            </Link>
+            <Link to={"/browse"} className="mr-3 text-lg">
+              Movies
+            </Link>
+            <Link to={"/browse"} className="mr-3 text-lg">
+              New & Popular
+            </Link>
           </>
         )}
       </div>
@@ -59,7 +67,10 @@ const Header = () => {
             alt="user-icon"
           ></img>
 
-          <button className=" mr-3 bg-blue-600 px-4 rounded  " onClick={signoutHandler}>
+          <button
+            className=" mr-3 bg-blue-600 px-4 rounded  "
+            onClick={signoutHandler}
+          >
             Sign Out
           </button>
         </div>
