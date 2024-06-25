@@ -14,18 +14,25 @@ const PrimaryContainer = () => {
   useTopRatedMovies();
   const moviesList = useSelector((store) => store.movie.nowPlayingMovies);
   if (!moviesList) return;
-  let randomNumber = Math.floor(Math.random() * moviesList.length);
+
+  let randomNumber = 19;
   if (
     moviesList[randomNumber].title === "Kali: Avenging Angel" ||
     moviesList[randomNumber].title === "May the 12th Be with You"
   ) {
     randomNumber -= 2;
+    console.log(randomNumber, "revised");
   }
   const randomMovie = moviesList[randomNumber];
-  const { title, id, overview } = randomMovie;
+  const { title, id, overview, vote_average } = randomMovie;
   return (
     <div className="-mt-16">
-      <RunTrailerDetails title={title} description={overview} />
+      <RunTrailerDetails
+        movieID={id}
+        title={title}
+        description={overview}
+        rating={vote_average}
+      />
       <RunTrailer movieID={id} />
     </div>
   );

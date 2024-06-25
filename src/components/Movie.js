@@ -1,34 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useLocation } from "react-router-dom";
-import { OPTIONS } from "../utils/constants";
+import useHeroMovieTrailer from "../hooks/useHeroMovieTrailer";
 
 const Movie = () => {
   const location = useLocation();
-  console.log(location);
   const { state } = location;
-  const [trailerDetails, setTrailerDetails] = useState(null);
-  useEffect(() => {
-    const fetchTrailer = async () => {
-      const response = await fetch(
-        "https://api.themoviedb.org/3/movie/" +
-          state.id +
-          "/videos?language=en-US",
-        OPTIONS
-      );
-      const json = await response.json();
-      const trailerVideoClips = json.results;
-      const trailers = trailerVideoClips.filter(
-        (video) => video.type === "Trailer"
-      );
-      const trailer =
-        trailers.length === 0 ? trailerVideoClips[0] : trailers[0];
-      setTrailerDetails(trailer);
-    };
-    fetchTrailer();
-  }, [state.id]);
+  const trailerDetails = useHeroMovieTrailer(state.id);
+
   if (trailerDetails === null) return <h1>Loading....</h1>;
+
   return (
-    <div className="w-screen overflow-hidden ">
+    <div className="w-screen  bg-black text-white ">
       <iframe
         className="w-screen aspect-video "
         src={
@@ -38,6 +20,16 @@ const Movie = () => {
         }
         title="YouTube video player"
       ></iframe>
+
+      <div className="p-4">
+        <h2 className="text-5xl font-bold mb-4">{state.title}</h2>
+        <h2 className="text-lg  mb-2">
+          <span className="text-red-500">Rating</span> : {state.vote_average}
+        </h2>
+        <h2 className="text-lg  mb-4">
+          <span className="text-red-500">Overview</span> : {state.overview}
+        </h2>
+      </div>
     </div>
   );
 };
