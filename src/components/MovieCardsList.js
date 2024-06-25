@@ -9,7 +9,7 @@ const MovieCardsList = ({ listTitle, movies }) => {
         {movies.map((movie) => {
           return (
             <div key={movie.id} className="mr-6 hover:scale-95">
-              <Link to="/movie" state={movie}>
+              <Link to={"/movie/" + movie.id} state={movie}>
                 <img
                   className="min-w-48 rounded-lg"
                   alt="movie poster"
