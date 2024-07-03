@@ -15,7 +15,7 @@ const PrimaryContainer = () => {
   const moviesList = useSelector((store) => store.movie.nowPlayingMovies);
   if (!moviesList) return;
 
-  let randomNumber = 10;
+  let randomNumber = 9;
   if (
     moviesList[randomNumber].title === "Kali: Avenging Angel" ||
     moviesList[randomNumber].title === "May the 12th Be with You"
@@ -24,6 +24,7 @@ const PrimaryContainer = () => {
     console.log(randomNumber, "revised");
   }
   const randomMovie = moviesList[randomNumber];
+  console.log(randomMovie.id,randomMovie.title)
   const { title, id, overview, vote_average } = randomMovie;
   return (
     <div className="-mt-16">

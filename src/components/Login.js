@@ -27,6 +27,10 @@ const Login = () => {
     else {
       if (!isSignInForm) {
         //! Sign Up Logic
+        if (userNameRef.current.value.trim() === "") {
+          setError("Please enter name");
+          return;
+        }
         createUserWithEmailAndPassword(auth, userInputEmail, userInputPassword)
           .then((userCredential) => {
             // Signed up
@@ -40,7 +44,9 @@ const Login = () => {
               );
             });
           })
-          .catch((error) => {});
+          .catch((error) => {
+            setError("Email already registered");
+          });
       } else {
         //! Login/SignIn Logic
         signInWithEmailAndPassword(auth, userInputEmail, userInputPassword)

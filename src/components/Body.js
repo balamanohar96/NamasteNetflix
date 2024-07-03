@@ -5,6 +5,7 @@ import Browse from "./Browse";
 import Movie from "./Movie";
 import ErrorPage from "./ErrorPage";
 
+
 const Body = () => {
   const router = createBrowserRouter([
     {
@@ -14,11 +15,11 @@ const Body = () => {
     },
     {
       path: "/browse",
-      element: <Browse />,
+      element: [<Browse />],
     },
     {
       path: "/movie/:movieID",
-      element: <Movie />,
+      element: [<Movie />],
     },
   ]);
 

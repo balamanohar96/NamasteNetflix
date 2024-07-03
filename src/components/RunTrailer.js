@@ -5,7 +5,8 @@ import { useSelector } from "react-redux";
 const RunTrailer = ({ movieID }) => {
   useTrailerVideo(movieID);
   const trailerVideo = useSelector((store) => store.movie.trailerVideo);
-  if (!trailerVideo) return;
+  if (!trailerVideo || trailerVideo.length === 0)
+    return <h1 className="h-screen"> </h1>;
   return (
     <div className="w-screen ">
       <iframe

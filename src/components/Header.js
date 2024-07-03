@@ -43,16 +43,28 @@ const Header = () => {
         <img className="w-28 h-12 mr-3" alt="logo" src={NETFLIX_LOGO_URL}></img>
         {user && (
           <>
-            <Link to={"/browse"} className="mr-3 text-lg">
+            <Link
+              to={"/browse"}
+              className="mr-3 text-lg px-3 py-1 hover:bg-gray-100 hover:text-black rounded-lg"
+            >
               Home
             </Link>
-            <Link to={"/browse"} className="mr-3 text-lg">
+            <Link
+              to={"/browse"}
+              className="mr-3 text-lg px-3 py-1 hover:bg-gray-100 hover:text-black rounded-lg"
+            >
               TVShows
             </Link>
-            <Link to={"/browse"} className="mr-3 text-lg">
+            <Link
+              to={"/browse"}
+              className="mr-3 text-lg px-3 py-1 hover:bg-gray-100 hover:text-black  rounded-lg"
+            >
               Movies
             </Link>
-            <Link to={"/browse"} className="mr-3 text-lg">
+            <Link
+              to={"/browse"}
+              className="mr-3 text-lg px-3 py-1 hover:bg-gray-100 hover:text-black rounded-lg"
+            >
               New & Popular
             </Link>
           </>
@@ -60,7 +72,7 @@ const Header = () => {
       </div>
       {user && (
         <div className=" flex ">
-          {user && <h3 className=" mr-4 text-xl "> {user.displayName}</h3>}
+          {user && <h3 className=" mr-4 text-xl  ">welcome, <span className=" text-xl font-bold">{user.displayName}</span></h3>}
           <img
             className="drop-btn mr-3"
             src={USER_AVATAR_ICON}
@@ -68,7 +80,7 @@ const Header = () => {
           ></img>
 
           <button
-            className=" mr-3 bg-blue-600 px-4 rounded  "
+            className=" mr-3 bg-blue-600 px-4 rounded shadow-red-600  hover:bg-gray-100 hover:text-black  "
             onClick={signoutHandler}
           >
             Sign Out
