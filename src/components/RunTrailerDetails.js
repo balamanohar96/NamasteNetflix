@@ -50,7 +50,7 @@ const RunTrailerDetails = ({ title, description, movieID, rating }) => {
               onClick={moreInfoBtnHandler}
             >
               <img className="w-4 m-2" src={INFO_ICON} alt="infoIcon" />
-              {isMoreActive ? "Show Less" : "More Info"}
+              {isMoreActive ? "Less Info" : "More Info"}
             </button>
           </div>
         )}
