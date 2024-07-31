@@ -19,7 +19,7 @@ const MovieCardsList = ({ listTitle, movies }) => {
           strokeWidth={1.5}
           stroke="currentColor"
           className="w-12 border rounded-full text-red-500 bg-slate-200 p-2  absolute top-40 left-0 cursor-pointer z-30"
-          onClick={() => scroll(-600)}
+          onClick={() => scroll(-500)}
         >
           <path
             strokeLinecap="round"
@@ -51,7 +51,7 @@ const MovieCardsList = ({ listTitle, movies }) => {
           strokeWidth={1.5}
           stroke="currentColor"
           className="w-12 border rounded-full text-red-500 bg-slate-200 p-2  absolute top-40 right-0 cursor-pointer z-30"
-          onClick={() => scroll(600)}
+          onClick={() => scroll(500)}
         >
           <path
             strokeLinecap="round"

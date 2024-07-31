@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import RunTrailer from "./RunTrailer";
 import RunTrailerDetails from "./RunTrailerDetails";
 import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
@@ -8,6 +8,8 @@ import useUpcomingMovies from "../hooks/useUpcomingMovies";
 import useTopRatedMovies from "../hooks/useTopRatedMovies";
 
 const PrimaryContainer = () => {
+  const [randomNumber2] = useState(Math.round(Math.random() * 20));
+
   usePopularMovies();
   useNowPlayingMovies();
   useUpcomingMovies();
@@ -15,16 +17,8 @@ const PrimaryContainer = () => {
   const moviesList = useSelector((store) => store.movie.nowPlayingMovies);
   if (!moviesList) return;
 
-  let randomNumber = 9;
-  if (
-    moviesList[randomNumber].title === "Kali: Avenging Angel" ||
-    moviesList[randomNumber].title === "May the 12th Be with You"
-  ) {
-    randomNumber -= 2;
-    console.log(randomNumber, "revised");
-  }
-  const randomMovie = moviesList[randomNumber];
-  console.log(randomMovie.id,randomMovie.title)
+  const randomMovie = moviesList[randomNumber2];
+
   const { title, id, overview, vote_average } = randomMovie;
   return (
     <div className="-mt-16">

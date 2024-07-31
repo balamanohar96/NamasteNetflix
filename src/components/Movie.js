@@ -24,12 +24,12 @@ const Movie = () => {
           title="YouTube video player"
         ></iframe>
 
-        <div className="p-4">
-          <h2 className="text-5xl font-bold mb-4">{state.title}</h2>
-          <h2 className="text-lg  mb-2">
+        <div className="p-4 pb-60 bg-black">
+          <h2 className="text-xl md:text-5xl font-bold mb-4">{state.title}</h2>
+          <h2 className="md:text-lg  mb-2">
             <span className="text-red-500">Rating</span> : {state.vote_average}
           </h2>
-          <h2 className="text-lg  mb-4">
+          <h2 className="md:text-lg  mb-4">
             <span className="text-red-500">Overview</span> : {state.overview}
           </h2>
         </div>

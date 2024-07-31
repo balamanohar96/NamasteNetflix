@@ -53,8 +53,8 @@ const Login = () => {
           .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
-            const { uid, email } = user;
-            dispatch(addUser({ uid: uid, email: email, displayName: "name" }));
+            const { uid, email,displayName } = user;
+            dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
           })
           .catch((error) => {
             setError("email or password is invalid");
@@ -66,14 +66,12 @@ const Login = () => {
   return (
     <div>
       <div className="min-h-screen bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/4d7bb476-6d8b-4c49-a8c3-7739fddd135c/deecf71d-7a47-4739-9e1a-31b6b0d55be7/IN-en-20240429-popsignuptwoweeks-perspective_alpha_website_medium.jpg')]">
-        <div className="min-h-screen bg-black bg-opacity-60 px-28">
+        <div className="min-h-screen bg-black bg-opacity-60 md:px-28">
           <Header />
-
-          <p>8754539642@Bala</p>
 
           <form
             onSubmit={(e) => e.preventDefault()}
-            className="w-1/3 bg-black bg-opacity-70 mx-auto mt-8 px-10 py-8 text-white rounded-md"
+            className="lg:w-1/3 bg-black bg-opacity-70 mx-auto mt-8 px-10 py-8 text-white rounded-md"
           >
             <h1 className="text-3xl font-bold my-2">
               {isSignInForm ? "Sign In" : "Sign Up"}

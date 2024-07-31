@@ -15,9 +15,15 @@ const RunTrailerDetails = ({ title, description, movieID, rating }) => {
     }
   };
   return (
-    <div className=" absolute  bg-gradient-to-r w-screen aspect-video from-black py-48 px-8 text-white">
-      <h2 className=" font-semibold text-4xl">{title}</h2>
-      <p className={isMoreActive ? "w-1/2 py-6" : "w-1/3 py-6"}>
+    <div className=" absolute md:bg-gradient-to-r w-screen aspect-video from-black py-32 md:py-48 px-8 text-white">
+      <h2 className=" font-semibold text-xl md:text-4xl">{title}</h2>
+      <p
+        className={
+          isMoreActive
+            ? "w-1/2 py-6 hidden lg:block"
+            : "w-1/3 py-6 hidden lg:block"
+        }
+      >
         {overview}
         {!isMoreActive && description.length > 190 && "..."}
       </p>
@@ -31,20 +37,22 @@ const RunTrailerDetails = ({ title, description, movieID, rating }) => {
             vote_average: rating,
           }}
         >
-          <button className="rounded-md bg-white text-black px-8 py-2 flex items-center hover:opacity-80 mr-3 ">
+          <button className="rounded-md bg-white text-black px-4 mt-7 md:mt-0 md:px-8 md:py-2 flex items-center hover:opacity-80 mr-3 ">
             <img className="w-4 m-2" src={PLAY_ICON} alt="playIcon" />
             Play
           </button>
         </Link>
 
         {overview.length >= 190 && (
-          <button
-            className="rounded-md bg-white text-black px-8 py-2 flex items-center hover:opacity-80 w-44"
-            onClick={moreInfoBtnHandler}
-          >
-            <img className="w-4 m-2" src={INFO_ICON} alt="infoIcon" />
-            {isMoreActive ? "Show Less" : "More Info"}
-          </button>
+          <div className="hidden md:block">
+            <button
+              className="rounded-md bg-white text-black px-8 py-2 flex items-center hover:opacity-80 w-44 "
+              onClick={moreInfoBtnHandler}
+            >
+              <img className="w-4 m-2" src={INFO_ICON} alt="infoIcon" />
+              {isMoreActive ? "Show Less" : "More Info"}
+            </button>
+          </div>
         )}
       </div>
     </div>
