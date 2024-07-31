@@ -20,8 +20,8 @@ const RunTrailerDetails = ({ title, description, movieID, rating }) => {
       <p
         className={
           isMoreActive
-            ? "w-1/2 py-6 hidden lg:block"
-            : "w-1/3 py-6 hidden lg:block"
+            ? "w-1/2 py-6 hidden md:block"
+            : "w-1/3 py-6 hidden md:block"
         }
       >
         {overview}
